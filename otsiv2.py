@@ -20,7 +20,7 @@ pattern_time = r'\d{2}[:]\d{2}'
 date_list = [] # список с датами
 time_list = [] # список со временм комменатрия
 reviews_list = [] # список с комменатриями
-dict_review = dict.fromkeys(['Дата', 'Время', 'Отзыв']) # создаем словарь
+dict_review = dict.fromkeys(['Дата', 'Время', 'Отзыв', 'Сайт']) # создаем словарь
 
 
 
@@ -57,6 +57,7 @@ for rev in reviews:
 dict_review['Дата'] = date_list
 dict_review['Время'] = time_list
 dict_review['Отзыв'] = reviews_list
+dict_review['Сайт'] = 'professorrating.org'
 
 #print(dict_review)
 # print(len(date_list))
@@ -66,16 +67,14 @@ dict_review['Отзыв'] = reviews_list
 
 # используя pandas, создаем DataFrame
 df = pd.DataFrame(dict_review)
-print(df)
+#print(df)
 
-# формируем файл csv
-df.to_csv('df_02.csv')
+# ДОБАВЛЯЕМ в существующий файл csv (mode 'a' - append)
+df.to_csv('df.csv', mode='a', header=False)
+#df.to_csv('df_02.csv')
 
 # читаем csv
-
-# читаем csv
-DataFrame_from_csv = pd.read_csv('df_02.csv')
+DataFrame_from_csv = pd.read_csv('df.csv')
 print(DataFrame_from_csv)
-
 
 

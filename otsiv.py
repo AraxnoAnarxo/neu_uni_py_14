@@ -24,7 +24,7 @@ date_review_list = [] # создаем список для дат
 time_review_list = [] # создаем список для времени комментария
 reviews_list = [] # список с текстами комментариев
 
-dict_review = dict.fromkeys(['Дата', 'Время', 'Отзыв'])
+dict_review = dict.fromkeys(['Дата', 'Время', 'Отзыв', 'Сайт'])
 
 
 for rev in reviews:
@@ -59,6 +59,7 @@ for rev in reviews:
 dict_review['Дата'] = date_review_list
 dict_review['Время'] = time_review_list
 dict_review['Отзыв'] = reviews_list
+dict_review['Сайт'] = 'ucheba-otziv.ru'
 
 
 #print(date_review_list)
@@ -67,14 +68,14 @@ dict_review['Отзыв'] = reviews_list
 
 # используя pandas, формируем DataFrame
 df = pd.DataFrame(dict_review)
-print(df)
+#print(df)
 #print(df['Время'])
 
 df.to_csv('df.csv') # создаем csv
 
 
 # читаем csv
-DataFrame_from_csv = pd.read_csv('df.csv')
+#DataFrame_from_csv = pd.read_csv('df.csv')
 #print(type(DataFrame_from_csv))
-print(DataFrame_from_csv)
+#print(DataFrame_from_csv)
 
