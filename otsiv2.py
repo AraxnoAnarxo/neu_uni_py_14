@@ -29,6 +29,9 @@ for rev in reviews:
     text_str = str(rev.text)
     #print(text_str)
     date_review = re.findall(pattern_date, text_str) # ищем дату по шаблону
+    #print(type(date_review))
+    date_review = date_review[0]
+    #print(date_review, type(date_review))
     date_review_str = str(date_review)
 
     time_review = re.findall(pattern_time, text_str) # ищем время по шаблону
@@ -40,9 +43,9 @@ for rev in reviews:
     #print(time_review_str)
 
 
-    date_review_new_01 = date_review_str[2:len(date_review_str)-2] # избавляемся от скобок и кавычек
-    date_review_02 = date_review_new_01.replace('\\xa0', ' ') # избавляемся от знаков \xa0
-    date_list.append(date_review_02) # формируем список с датами
+    #date_review_new_01 = date_review_str[2:len(date_review_str)-2] # избавляемся от скобок и кавычек
+    #date_review_02 = date_review_new_01.replace('\\xa0', ' ') # избавляемся от знаков \xa0
+    date_list.append(date_review_str) # формируем список с датами
     time_list.append(time_review_str) # формируем список со временем
 
     # Текст комменатрия
