@@ -24,7 +24,7 @@ date_review_list = [] # создаем список для дат
 time_review_list = [] # создаем список для времени комментария
 reviews_list = [] # список с текстами комментариев
 
-dict_review = dict.fromkeys(['Дата', 'Время', 'Отзыв', 'Сайт'])
+dict_review = dict.fromkeys(['Дата', 'Время', 'Сайт', 'Отзыв'])
 
 
 for rev in reviews:
